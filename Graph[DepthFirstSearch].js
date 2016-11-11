@@ -1,3 +1,6 @@
+//Graph Constructor Class
+/*@param v = vertices 
+*/
 function Graph(v){
     this.marked = [];
     this.edgeTo = [];
