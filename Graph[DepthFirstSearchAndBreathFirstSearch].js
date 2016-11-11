@@ -43,3 +43,23 @@ Graph.prototype.depthFirstSearch = function(v){
         }
     }
 }
+
+Graph.prototype.BreathFirstSearch = function(v){
+    var currentVertice = null;
+    var queue = [];
+    this.marked[v] = true;
+    queue.push(v);
+    while(queue.length > 0){
+        var w = queue.shift();
+        console.log("Marked "+w +" With Children");
+        for (var i = 0; i < this.adj[w].length; i++){
+            currentVertice = this.adj[w][i];
+            if(!this.marked[currentVertice]){
+                console.log(currentVertice);
+                this.edgeTo[currentVertice] = w;
+                this.marked[currentVertice] = true;
+                queue.push(currentVertice);
+            }
+        }
+    }
+}
